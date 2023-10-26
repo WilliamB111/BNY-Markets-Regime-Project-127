@@ -1,51 +1,47 @@
-# BNY-Markets-Regime-Project-127
+# Market Regime Modeling and Investment Strategies Project
 
-## Description du Projet
-Ce projet, mené dans le cadre universitaire, vise à développer un modèle robuste de modélisation des régimes de marché en utilisant des données financières provenant de la plateforme Bloomberg, focalisé sur la région des États-Unis. L'objectif est de capturer les tendances et les changements de régime dans les marchés financiers, pour ensuite élaborer et tester des stratégies d'investissement adaptatives basées sur ces régimes identifiés.
+## Project Description
+This project, conducted within a university framework, aims to develop a robust market regime modeling model using financial data from the Bloomberg platform, focused on the United States region. The goal is to capture market trends and regime shifts, to subsequently develop and test adaptive investment strategies based on these identified regimes.
 
-## Source de Données
-- **Plateforme**: Bloomberg
-- **Région Géographique**: États-Unis
-- **Données Utilisées**: Les données financières pertinentes incluant les prix des actifs, les indicateurs économiques, les données de marché, entre autres.
+## Data Source
+- **Platform**: Bloomberg
+- **Geographic Region**: United States
+- **Data Used**: Relevant financial data including asset prices, economic indicators, market data, among others.
 
-## Méthodologie
-1. **Exploration et Prétraitement des Données**:
-   - Exploration des données disponibles sur Bloomberg pour la région des États-Unis.
-   - Nettoyage et prétraitement des données pour assurer leur qualité et leur fiabilité.
-2. **Modélisation des Régimes de Marché**:
-   - Utilisation de méthodes statistiques et d'apprentissage automatique pour modéliser les régimes de marché.
-   - Application de modèles tels que le Modèle de Mélange Gaussien (GMM) pour identifier les différents régimes de marché.
-3. **Analyse des Tendances de Marché**:
-   - Analyse des tendances de marché pour comprendre la dynamique et les transitions entre différents régimes.
-   - Évaluation de l'impact des variables macroéconomiques et microéconomiques sur les régimes de marché.
-4. **Élaboration de Stratégies d'Investissement**:
-   - Développement de stratégies d'investissement adaptatives basées sur les régimes de marché identifiés.
-   - Backtesting des stratégies d'investissement sur des données historiques pour évaluer leur performance.
-5. **Évaluation et Amélioration**:
-   - Évaluation de la performance des modèles de régimes et des stratégies d'investissement.
-   - Itération et amélioration des modèles et des stratégies basées sur les retours d'expérience et les performances observées.
+## Methodology
+1. **Data Exploration and Preprocessing**:
+   - Exploration of available data on Bloomberg for the United States region.
+   - Cleaning and preprocessing of data to ensure their quality and reliability.
+2. **Market Regime Modeling**:
+   - Utilization of statistical methods and machine learning to model market regimes.
+   - Application of models such as the Gaussian Mixture Model (GMM) to identify different market regimes.
+3. **Market Trend Analysis**:
+   - Analysis of market trends to understand the dynamics and transitions between different regimes.
+   - Evaluation of the impact of macroeconomic and microeconomic variables on market regimes.
+4. **Investment Strategies Development**:
+   - Development of adaptive investment strategies based on identified market regimes.
+   - Backtesting of investment strategies on historical data to evaluate their performance.
+5. **Evaluation and Improvement**:
+   - Evaluation of the performance of regime models and investment strategies.
+   - Iteration and improvement of models and strategies based on feedback and observed performance.
 
-## Technologies Utilisées
-- **Langages de Programmation**: Python, R
-- **Librairies**: pandas, numpy, scikit-learn, matplotlib, seaborn
-- **Outils de Gestion de Données**: SQL, Bloomberg API
+## Technologies Used
+- **Programming Languages**: Python, R
+- **Libraries**: pandas, numpy, scikit-learn, matplotlib, seaborn
+- **Data Management Tools**: SQL, Bloomberg API
 
-## Collaborateurs
+## Collaborators
 - Arthur Bergeron
 - William Boisdur
 - Thomas Congnard
 - Costanza Piroddi
 - Guilhem Davignon
 
-
-
-
 ## Contact
-Pour toute question ou suggestion concernant ce projet, veuillez contacter William Boisdur à william-alek.boisdur@edu.devinci.fr.
+For any questions or suggestions regarding this project, please contact William Boisdur at william-alek.boisdur@edu.devinci.fr.
 
 ---
 
-*Ce README est un document vivant et sera mis à jour au fur et à mesure de l'avancement du projet.*
+*This README is a living document and will be updated as the project progresses.*
 
 ---
-
