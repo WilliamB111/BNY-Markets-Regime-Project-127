@@ -1,7 +1,50 @@
+
+pd.core.common.is_list_like = pd.api.types.is_list_like
+from pandas_datareader import data as pdr
+import datetime
 import yfinance as yf
-ticker = yf.Ticker('GOOGL').info
-market_price = ticker['regularMarketPrice']
-previous_close_price = ticker['regularMarketPreviousClose']
-print('Ticker: GOOGL')
-print('Market Price:', market_price)
-print('Previous Close Price:', previous_close_price)
+yf.pdr_override()
+
+start = datetime.datetime(2013, 1, 1)
+end = datetime.datetime(2017, 1, 1)
+
+#tickers = ['AAPL', 'ADBE', 'ORCL', 'EBAY', 'MSFT', 'QCOM', 'HPQ', 'JNPR', 'AMD', 'IBM', 'SPY']
+#tickers = ["^GSPC", "^DJI", "^IXIC", "^FTSE", "^FCHI", "^GDAXI", "^N225", "^SSEC"]
+tickers = ["SPY", "TLT", "LQD", "DBC", "EEM", "UUP", "TIP", "VGK", "SVXY", "SPLV", "MTUM", "QUAL", "IVE", "IWM"]
+
+df = pdr.get_data_yahoo(tickers, start, end)['Adj Close']
+df.tail(100)
+
+returns = df.pct_change()
+
+# Supprimer la première ligne car elle sera NaN
+returns = returns.dropna()
+
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.mixture import GaussianMixture
+import matplotlib.pyplot as plt
+
+# Standardiser les données
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(returns)
+
+# Appliquer le GMM
+n_clusters = 3  # Par exemple, pour 3 clusters
+gmm = GaussianMixture(n_components=n_clusters)
+gmm_clusters = gmm.fit_predict(scaled_data)
+
+# Ajouter les clusters au dataframe
+returns['Cluster'] = gmm_clusters
+
+print(returns.tail(100))
+
+# Pour visualiser les résultats (en supposant 2D)
+if scaled_data.shape[1] == 2:
+    plt.scatter(scaled_data[:, 0], scaled_data[:, 1], c=gmm_clusters, cmap='rainbow')
+    plt.show()
+
+for i in range(n_clusters):
+    print(f"Centre du cluster {i}:")
+    print(scaler.inverse_transform(gmm.means_[i]))
+    print("\n")
